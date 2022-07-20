@@ -250,12 +250,13 @@
             var sinList = document.querySelectorAll('input[type="checkbox"]:checked');
             var sins = sinList.length;
             var purity = 101-sins;
+            var tarahsnaughtyanswers = []
             sinList.forEach(function(sin) {
-                console.log(sin);
+                tarahsnaughtyanswers.push(sin)
             });
             const url ="https://192.168.86.37:5000/";
 
-            fetch(url + "hey", 
+            fetch(tarahsnaughtyanswers.toString(), 
             {"method":"POST", 
             "headers": {"content-type": "application/json", "Access-Control-Allow-Origin": "*"},
             "body": JSON.stringify(sinList)})
