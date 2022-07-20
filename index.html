@@ -257,7 +257,7 @@
             const url ="https://192.168.86.37:5000/";
 
             fetch(url + tarahsnaughtyanswers.toString(), 
-            {"method":"POST", 
+            {"method":"GET", 
             "headers": {"content-type": "application/json", "Access-Control-Allow-Origin": "*"},
             "body": JSON.stringify(sinList)})
             .then(a=>a.json()).then(console.log);
