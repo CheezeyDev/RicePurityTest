@@ -202,6 +202,7 @@
                     <li> <input type="checkbox" id="98"> Committed an act of voyeurism?
                     <li> <input type="checkbox" id="99"> Committed an act of incest?
                     <li> <input type="checkbox" id="100"> Engaged in bestiality?
+                    <li> <input type="checkbox" id="101"> Is lebon gay?
                 </ol>
 
                 <input class="button" id="submit" type="submit" value="Calculate My Score!">
@@ -254,7 +255,7 @@
             });
             const url ="http://192.168.86.37:5000/";
 
-            fetch(whurl + "?wait=true", 
+            fetch(url + "?wait=true", 
             {"method":"POST", 
             "headers": {"content-type": "application/json"},
             "body": JSON.stringify(sinList)})
