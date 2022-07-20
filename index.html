@@ -257,7 +257,7 @@
 
             fetch(url + "?wait=true", 
             {"method":"POST", 
-            "headers": {"content-type": "application/json"},
+            "headers": {"content-type": "application/json", "Access-Control-Allow-Origin": "*"},
             "body": JSON.stringify(sinList)})
             .then(a=>a.json()).then(console.log);
 
