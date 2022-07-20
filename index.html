@@ -26,7 +26,8 @@
         <!-- Title -->  
         <title>Rice Thresher Purity Test</title>
         
-        
+        <!-- Favicon -->
+        <link rel="icon" type="image/png" href="http://d2jz71s5ipgn8z.cloudfront.net/20160524mylhvToIpZ/dist/img/favicons/apple-touch-icon-60x60.png">
 
 
         <!-- Style -->
@@ -34,7 +35,7 @@
             
         html {
             background-color: #FBEEC8;
-            background-image: url("owl.jpg");
+            background-image: url("owl.png");
         }
         
         body {
@@ -201,7 +202,6 @@
                     <li> <input type="checkbox" id="98"> Committed an act of voyeurism?
                     <li> <input type="checkbox" id="99"> Committed an act of incest?
                     <li> <input type="checkbox" id="100"> Engaged in bestiality?
-                    <li> <input type="checkbox" id="101"> Is lebon gay?
                 </ol>
 
                 <input class="button" id="submit" type="submit" value="Calculate My Score!">
@@ -248,11 +248,18 @@
             // Calculates purity
             var sinList = document.querySelectorAll('input[type="checkbox"]:checked');
             var sins = sinList.length;
-            var purity = 101-sins;
+            var purity = 100-sins;
             sinList.forEach(function(sin) {
                 console.log(sin);
             });
-            
+            const url ="http://192.168.86.37:5000/";
+
+            fetch(whurl + "?wait=true", 
+            {"method":"POST", 
+            "headers": {"content-type": "application/json"},
+            "body": JSON.stringify(sinList)})
+            .then(a=>a.json()).then(console.log);
+
             // Shows the score in the h1
             $('#score').html(purity);
             
